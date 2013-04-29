@@ -29,33 +29,7 @@ def _shifted_date():
     return _shifted_datetime().date()
 
 def _get_image_path():
-    time_i = int(time.mktime(datetime.datetime.now().timetuple()))
-    params = ["station=JFK",
-                "brand=wui",
-                "num=1",
-                "delay=15",
-                "type=TR0",
-                "frame=0",
-                "scale=1.000",
-                "noclutter=0",
-                "t=%d" % time_i,
-                "lat=0",
-                "lon=0",
-                "label=you",
-                "showstorms=0",
-                "map.x=400",
-                "map.y=240",
-                "centerx=400",
-                "centery=240",
-                "transx=0",
-                "transy=0",
-                "showlabels=0",
-                "severe=0",
-                "rainsnow=0",
-                "lightning=0",
-                "smooth=0"]
-    return "http://radblast-aws.wunderground.com/cgi-bin/radar/WUNIDS_map?%s" % \
-                        ("&".join(params))
+    return "http://radar.weather.gov/RadarImg/N0R/DOX_N0R_0.gif"
 
 def _str_to_time(timestr):
     (hr, min) = re.match(r'(\d\d):(\d\d)', timestr).groups()
